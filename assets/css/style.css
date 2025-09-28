@@ -1,0 +1,216 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+h1 {
+    color: #cc0000;
+    text-align: center;
+    font-size: 30px;
+}
+
+h2 {
+    color: #cc0000;
+    font-size: 24px;
+}
+
+h3 {
+    color: #333;
+    font-size: 20px;
+}
+
+#menu {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#menu button {
+    background-color: #cc0000;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#menu button:hover {
+    background-color: #990000;
+}
+
+.page {
+    background-color: white;
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid #ccc;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.stat {
+    background-color: #cc0000;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.stat h3 {
+    color: white;
+    margin: 0 0 10px 0;
+}
+
+.stat span {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+form {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ddd;
+    margin: 20px 0;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px 0;
+    font-weight: bold;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+button {
+    background-color: #cc0000;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 3px;
+}
+
+button:hover {
+    background-color: #990000;
+}
+
+#donorsList, #hospitalsList, #requestsList {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border: 1px solid #ddd;
+    margin: 20px 0;
+}
+
+.donor-item, .hospital-item, .request-item {
+    background-color: white;
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+.donor-item h4, .hospital-item h4, .request-item h4 {
+    color: #cc0000;
+    margin: 0 0 10px 0;
+}
+
+.donor-item p, .hospital-item p, .request-item p {
+    margin: 5px 0;
+    color: #333;
+}
+
+.blood-type {
+    background-color: #cc0000;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 12px;
+}
+
+.urgency-high {
+    border-left: 5px solid #cc0000;
+}
+
+.urgency-medium {
+    border-left: 5px solid #ff9900;
+}
+
+.urgency-low {
+    border-left: 5px solid #00cc00;
+}
+
+.urgency-emergency {
+    border-left: 5px solid #cc0000;
+    background-color: #ffe6e6;
+}
+
+.search-form {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ddd;
+    margin: 20px 0;
+}
+
+.search-form label {
+    display: inline-block;
+    width: 150px;
+    margin-right: 10px;
+}
+
+.search-form input, .search-form select {
+    width: 200px;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.search-form button {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+#searchResults {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border: 1px solid #ddd;
+    margin: 20px 0;
+}
+
+.donation-amount {
+    background-color: #00cc00;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 0;
+}
+
+.btn-small {
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 3px;
+    margin: 5px 0;
+}
