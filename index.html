@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blood Bank System</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+<body>
+    <h1>Blood Bank Management System</h1>
+    
+    <div id="menu">
+        <button onclick="showPage('home')">Home</button>
+        <button onclick="showPage('donors')">Donors</button>
+        <button onclick="showPage('hospitals')">Hospitals</button>
+        <button onclick="showPage('requests')">Blood Requests</button>
+        <button onclick="showPage('search')">Search Donors</button>
+    </div>
+
+    <div id="home" class="page">
+        <h2>Welcome to Blood Bank System</h2>
+        <p>This system helps manage blood donors and hospitals.</p>
+        
+        <div class="stats">
+            <div class="stat">
+                <h3>Total Donors</h3>
+                <span id="donorCount">0</span>
+            </div>
+            <div class="stat">
+                <h3>Total Hospitals</h3>
+                <span id="hospitalCount">0</span>
+            </div>
+            <div class="stat">
+                <h3>Pending Requests</h3>
+                <span id="requestCount">0</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="donors" class="page" style="display:none">
+        <h2>Donor Registration</h2>
+        
+        <form id="donorForm">
+            <label>Name:</label>
+            <input type="text" id="donorName" required><br><br>
+            
+            <label>Email:</label>
+            <input type="email" id="donorEmail" required><br><br>
+            
+            <label>Phone:</label>
+            <input type="text" id="donorPhone" required><br><br>
+            
+            <label>Blood Type:</label>
+            <select id="donorBloodType" required>
+                <option value="">Choose Blood Type</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+            </select><br><br>
+            
+            <label>Age:</label>
+            <input type="number" id="donorAge" required><br><br>
+            
+            <label>Weight (kg):</label>
+            <input type="number" id="donorWeight" required><br><br>
+            
+            <label>Address:</label>
+            <textarea id="donorAddress"></textarea><br><br>
+            
+            <button type="submit">Register Donor</button>
+        </form>
+        
+        <h3>Record Blood Donation</h3>
+        <form id="donationForm">
+            <label>Donor:</label>
+            <select id="donationDonor" required>
+                <option value="">Choose Donor</option>
+            </select><br><br>
+            
+            <label>Hospital:</label>
+            <select id="donationHospital" required>
+                <option value="">Choose Hospital</option>
+            </select><br><br>
+            
+            <label>Blood Type:</label>
+            <select id="donationBloodType" required>
+                <option value="">Choose Blood Type</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+            </select><br><br>
+            
+            <label>Quantity (units):</label>
+            <input type="number" id="donationQuantity" min="1" max="10" required><br><br>
+            
+            <label>Donation Date:</label>
+            <input type="date" id="donationDate" required><br><br>
+            
+            <label>Notes:</label>
+            <textarea id="donationNotes"></textarea><br><br>
+            
+            <button type="submit">Record Donation</button>
+        </form>
+        
+        <h3>Registered Donors</h3>
+        <div id="donorsList">
+            <p>Loading donors...</p>
+        </div>
+    </div>
+
+    <div id="hospitals" class="page" style="display:none">
+        <h2>Hospital Registration</h2>
+        
+        <form id="hospitalForm">
+            <label>Hospital Name:</label>
+            <input type="text" id="hospitalName" required><br><br>
+            
+            <label>Email:</label>
+            <input type="email" id="hospitalEmail" required><br><br>
+            
+            <label>Phone:</label>
+            <input type="text" id="hospitalPhone" required><br><br>
+            
+            <label>License Number:</label>
+            <input type="text" id="hospitalLicense" required><br><br>
+            
+            <label>Address:</label>
+            <textarea id="hospitalAddress" required></textarea><br><br>
+            
+            <button type="submit">Register Hospital</button>
+        </form>
+        
+        <h3>Registered Hospitals</h3>
+        <div id="hospitalsList">
+            <p>Loading hospitals...</p>
+        </div>
+    </div>
+
+    <div id="requests" class="page" style="display:none">
+        <h2>Blood Request</h2>
+        
+        <form id="requestForm">
+            <label>Hospital:</label>
+            <select id="requestHospital" required>
+                <option value="">Choose Hospital</option>
+            </select><br><br>
+            
+            <label>Blood Type Needed:</label>
+            <select id="requestBloodType" required>
+                <option value="">Choose Blood Type</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+            </select><br><br>
+            
+            <label>Quantity (units):</label>
+            <input type="number" id="requestQuantity" required><br><br>
+            
+            <label>Urgency:</label>
+            <select id="requestUrgency" required>
+                <option value="low">Low</option>
+                <option value="medium" selected>Medium</option>
+                <option value="high">High</option>
+                <option value="emergency">Emergency</option>
+            </select><br><br>
+            
+            <label>Required Date:</label>
+            <input type="date" id="requestDate" required><br><br>
+            
+            <label>Notes:</label>
+            <textarea id="requestNotes"></textarea><br><br>
+            
+            <button type="submit">Submit Request</button>
+        </form>
+        
+        <h3>Blood Requests</h3>
+        <div id="requestsList">
+            <p>Loading requests...</p>
+        </div>
+    </div>
+
+    <div id="search" class="page" style="display:none">
+        <h2>Search Donors</h2>
+        
+        <div class="search-form">
+            <label>Search by Name:</label>
+            <input type="text" id="searchName" placeholder="Enter donor name">
+            <button onclick="searchByName()">Search</button>
+            <br><br>
+            
+            <label>Search by Blood Type:</label>
+            <select id="searchBloodType">
+                <option value="">All Blood Types</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+            </select>
+            <button onclick="searchByBloodType()">Search</button>
+            <br><br>
+            
+            <button onclick="showAllDonors()">Show All Donors</button>
+        </div>
+        
+        <h3>Search Results</h3>
+        <div id="searchResults">
+            <p>Use search options above to find donors.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Burhanuddin Yousuf. All rights reserved.</p>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
